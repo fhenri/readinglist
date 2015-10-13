@@ -1,0 +1,28 @@
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE")
+    }
+}
+
+springBoot {
+    mainClass = "com.readinglist.ReadingListApplication"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile files('lib/selenium-server-standalone-2.47.1.jar')
+    testCompile('org.springframework.boot:spring-boot-starter-test') 
+}
